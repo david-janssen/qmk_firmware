@@ -1,8 +1,8 @@
 // David Janssen, janssen.dhj@gmail.com, KMonad maintainer
 
 #include QMK_KEYBOARD_H
-#include "action_layer.h"
-#include "keymap_colemak.h"
+/* #include "action_layer.h" */
+/* #include "keymap_colemak.h" */
 
 // Alias names to layer numbers
 #define ALPH 0
@@ -31,11 +31,11 @@
 
 // Setup tap-dance for escaping base-state changes
 enum {
-  OUT = 0 // Tap once: F3, tap twice, reset base-layer to ALPH
+  OUT = 0 // Tap once: /, tap twice, reset base-layer to ALPH
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {
-  [OUT] = ACTION_TAP_DANCE_LAYER_MOVE(KC_F3, ALPH)
+  [OUT] = ACTION_TAP_DANCE_LAYER_MOVE(KC_SLSH, ALPH)
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -43,8 +43,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [ALPH] = LAYOUT(
     KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
     KC_A,    KC_R,    KC_S,    KC_T,    KC_D,                      KC_H,    KC_N,    KC_E,    KC_I,    KC_O,
-    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
-    KC_TAB,  KC_F4,   KC_F5,   KC_LSFT, KC_LCTL, L_NUM,   KC_ESC,  KC_SPC,  KC_LGUI, KC_MINS, KC_F3,   KC_ENT
+    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_LALT,
+    KC_TAB,  KC_F4,   KC_F3,   KC_LSFT, KC_LCTL, L_NUM,   KC_ESC,  KC_SPC,  KC_LGUI, KC_MINS, KC_SLSH, KC_ENT
   ),
 
   // Basic numbers and symbols
@@ -52,7 +52,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,   KC_GRV,  S_TILDE, KC_LBRC, KC_RBRC,                   KC_NO,   KC_7,    KC_8,    KC_9,    KC_SLSH,
     KC_LSFT, S_DQUOT, S_UNDER, S_LPAR,  S_RPAR,                    KC_BSPC, KC_4,    KC_5,    KC_6,    KC_ASTR,
     KC_NO,   KC_QUOT, S_PIPE,  S_LCURL, S_RCURL,                   KC_EQL,  KC_1,    KC_2,    KC_3,    KC_MINS,
-    KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_TRNS, L_FKEY,  KC_SPC,  KC_0,    KC_NO,   KC_DOT,  KC_PLUS
+    KC_NO,   KC_NO,   KC_BSLS, KC_NO,   KC_NO,   KC_TRNS, L_FKEY,  KC_SPC,  KC_0,    KC_NO,   KC_DOT,  KC_PLUS
   ),
 
   // Function keys and utilities
