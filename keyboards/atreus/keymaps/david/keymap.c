@@ -35,7 +35,7 @@ enum {
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {
-  [OUT] = ACTION_TAP_DANCE_LAYER_MOVE(KC_SLSH, ALPH)
+  [OUT] = ACTION_TAP_DANCE_LAYER_MOVE(KC_F5, ALPH)
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -76,6 +76,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
     KC_A,    KC_R,    KC_S,    KC_T,    KC_D,                      KC_H,    KC_N,    KC_E,    KC_I,    KC_O,
     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_LALT,
-    KC_TAB,  KC_F4,   KC_F3,   KC_LSFT, KC_LCTL, KC_F6,   KC_ESC,  KC_SPC,  KC_LGUI, KC_MINS, TD(OUT), KC_ENT
+    KC_TAB,  TD(OUT), KC_F6,   KC_LSFT, KC_LCTL, KC_F7,   KC_ESC,  KC_SPC,  KC_LGUI, KC_MINS, KC_SLSH, KC_ENT
   )
 };
