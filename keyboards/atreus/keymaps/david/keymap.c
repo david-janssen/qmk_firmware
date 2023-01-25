@@ -43,8 +43,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [ALPH] = LAYOUT(
     KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
     KC_A,    KC_R,    KC_S,    KC_T,    KC_D,                      KC_H,    KC_N,    KC_E,    KC_I,    KC_O,
-    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_LALT,
-    KC_TAB,  KC_F1,   KC_F2,   KC_LSFT, KC_LCTL, L_NUM,   KC_ESC,  KC_SPC,  KC_LGUI, KC_MINS, KC_SLSH, KC_ENT
+    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
+    KC_TAB,  KC_BSPC, KC_F2,   KC_LSFT, KC_LCTL, L_NUM,   KC_ESC,  KC_SPC,  KC_LGUI, KC_MINS, KC_LALT, KC_ENT
+  ),
+
+  // KMonad compat, raw map for kmonad, requires hard-reset to escape
+  [KMO] = LAYOUT(
+    KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
+    KC_A,    KC_R,    KC_S,    KC_T,    KC_D,                      KC_H,    KC_N,    KC_E,    KC_I,    KC_O,
+    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
+    KC_TAB,  KC_BSPC, KC_F2,   KC_LSFT, KC_LCTL, KC_F7,   KC_ESC,  KC_SPC,  KC_LGUI, KC_MINS, KC_LALT, KC_ENT
   ),
 
   // Basic numbers and symbols
@@ -55,27 +63,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO,   KC_NO,   KC_BSLS, KC_NO,   KC_NO,   KC_TRNS, L_FKEY,  KC_SPC,  KC_0,    KC_NO,   KC_DOT,  KC_PLUS
   ),
 
+  // KMonad controlls
+ //ooo//
+
   // Function keys and utilities
   [FKEY] = LAYOUT(
     RESET,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
     G_GAME,  KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_F4,   KC_F5,   KC_F6,   KC_F11,
     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_F1,   KC_F2,   KC_F3,   KC_F12,
     G_KMO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
-  ),
+  )
 
   // Gaming layout with qwerty and left mod column
-  [GAME] = LAYOUT(
-    KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,                      KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,
-    KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,                      KC_G,    KC_H,    KC_J,    KC_K,    KC_L,
-    KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,                      KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,
-    KC_TAB,  KC_LALT, KC_M,    KC_ENT,  KC_SPC,  KC_NO,   KC_NO,   KC_LEFT, KC_RGHT, KC_MINS, TD(OUT), KC_P
-  ),
+  // Moved to kmonad, remains for reference
+  //
+  /* [GAME] = LAYOUT( */
+  /*   KC_ESC,  KC_Q,    KC_W,    KC_E,    KC_R,                      KC_T,    KC_Y,    KC_U,    KC_I,    KC_O, */
+  /*   KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,                      KC_G,    KC_H,    KC_J,    KC_K,    KC_L, */
+  /*   KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,                      KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT, */
+  /*   KC_TAB,  KC_LALT, KC_M,    KC_ENT,  KC_SPC,  KC_NO,   KC_NO,   KC_LEFT, KC_RGHT, KC_MINS, TD(OUT), KC_P */
+  /* ), */
 
-  // KMonad compat, no functionality except 1 tap-dance to escape
-  [KMO] = LAYOUT(
-    KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
-    KC_A,    KC_R,    KC_S,    KC_T,    KC_D,                      KC_H,    KC_N,    KC_E,    KC_I,    KC_O,
-    KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_LALT,
-    KC_TAB,  KC_F5,   KC_F6,   KC_LSFT, KC_LCTL, KC_F7,   KC_ESC,  KC_SPC,  KC_LGUI, KC_MINS, KC_SLSH, KC_ENT
-  )
 };

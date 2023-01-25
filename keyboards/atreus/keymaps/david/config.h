@@ -7,4 +7,4 @@
 
 // Set my debounce delay slightly higher
 #undef DEBOUNCE
-#define DEBOUNCE 7
+#define DEBOUNCE 15
