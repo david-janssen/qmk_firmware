@@ -35,36 +35,33 @@ enum {
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {
-  [OUT] = ACTION_TAP_DANCE_LAYER_MOVE(KC_F5, ALPH)
+  [OUT] = ACTION_TAP_DANCE_LAYER_MOVE(KC_SCLN, ALPH)
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   // Basic colemak layout
   [ALPH] = LAYOUT(
-    KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
+    KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_ESC,
     KC_A,    KC_R,    KC_S,    KC_T,    KC_D,                      KC_H,    KC_N,    KC_E,    KC_I,    KC_O,
     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
-    KC_TAB,  KC_BSPC, KC_F2,   KC_LSFT, KC_LCTL, L_NUM,   KC_ESC,  KC_SPC,  KC_LGUI, KC_MINS, KC_LALT, KC_ENT
+    KC_TAB,  KC_BSPC, KC_SCLN, KC_LSFT, KC_LCTL, L_NUM,   L_FKEY,  KC_SPC,  KC_LGUI, KC_MINS, KC_LALT, KC_ENT
   ),
 
   // KMonad compat, raw map for kmonad, requires hard-reset to escape
   [KMO] = LAYOUT(
-    KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN,
+    KC_Q,    KC_W,    KC_F,    KC_P,    KC_G,                      KC_J,    KC_L,    KC_U,    KC_Y,    KC_ESC,
     KC_A,    KC_R,    KC_S,    KC_T,    KC_D,                      KC_H,    KC_N,    KC_E,    KC_I,    KC_O,
     KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                      KC_K,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,
-    KC_TAB,  KC_BSPC, KC_F2,   KC_LSFT, KC_LCTL, KC_F7,   KC_ESC,  KC_SPC,  KC_LGUI, KC_MINS, KC_LALT, KC_ENT
+    KC_TAB,  KC_BSPC, TD(OUT), KC_LSFT, KC_LCTL, KC_F2,   KC_F3,   KC_SPC,  KC_LGUI, KC_LALT, KC_F4,   KC_ENT
   ),
 
   // Basic numbers and symbols
   [NUMS] = LAYOUT(
     KC_NO,   KC_GRV,  S_TILDE, KC_LBRC, KC_RBRC,                   KC_NO,   KC_7,    KC_8,    KC_9,    KC_SLSH,
-    KC_LSFT, S_DQUOT, S_UNDER, S_LPAR,  S_RPAR,                    KC_BSPC, KC_4,    KC_5,    KC_6,    KC_ASTR,
+    KC_LSFT, S_DQUOT, S_UNDER, S_LPAR,  S_RPAR,                    KC_BSPC, KC_4,    KC_5,    KC_6,    KC_SCLN,
     KC_NO,   KC_QUOT, S_PIPE,  S_LCURL, S_RCURL,                   KC_EQL,  KC_1,    KC_2,    KC_3,    KC_MINS,
     KC_NO,   KC_NO,   KC_BSLS, KC_NO,   KC_NO,   KC_TRNS, L_FKEY,  KC_SPC,  KC_0,    KC_NO,   KC_DOT,  KC_PLUS
   ),
-
-  // KMonad controlls
- //ooo//
 
   // Function keys and utilities
   [FKEY] = LAYOUT(
