@@ -34,7 +34,7 @@ enum {
   OUT = 0 // Tap once: /, tap twice, reset base-layer to ALPH
 };
 
-qk_tap_dance_action_t tap_dance_actions[] = {
+tap_dance_action_t tap_dance_actions[] = {
   [OUT] = ACTION_TAP_DANCE_LAYER_MOVE(KC_SCLN, ALPH)
 };
 
@@ -65,7 +65,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   // Function keys and utilities
   [FKEY] = LAYOUT(
-    RESET,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
+    QK_BOOT, KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_F7,   KC_F8,   KC_F9,   KC_F10,
     G_GAME,  KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_F4,   KC_F5,   KC_F6,   KC_F11,
     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,                     KC_NO,   KC_F1,   KC_F2,   KC_F3,   KC_F12,
     G_KMO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
